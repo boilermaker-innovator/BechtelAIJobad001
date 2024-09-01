@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Teaser | Bechtel Construction - Pipe Fitter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 5px auto;
+            padding: 5px;
+            background-color: #f0f0f0;
+        }
+        .job-teaser {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 2px solid #0056b3;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            background-color: #0056b3;
+            padding: 10px;
+        }
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .title-location {
+            flex-grow: 1;
+        }
+        .job-title {
+            color: white;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 0 0 5px 0;
+        }
+        .location {
+            color: #e0e0e0;
+            font-size: 0.9em;
+        }
+        .content {
+            padding: 5px;
+            position: relative;
+            overflow: hidden;
+            min-height: 160px;
+        }
+        .slide {
+            display: none;
+            animation: fadeEffect 0.5s;
+        }
+        .slide.active {
+            display: block;
+        }
+        @keyframes fadeEffect {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .nav-dots {
+            text-align: center;
+            margin-top: 2px;
+        }
+        .dot {
+            height: 8px;
+            width: 8px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            margin: 0 3px;
+            cursor: pointer;
+        }
+        .dot.active {
+            background-color: #0056b3;
+        }
+        .full-ad-toggle {
+            text-align: right;
+            padding: 2px 5px;
+            background-color: #f0f0f0;
+            font-size: 0.9em;
+        }
+        .full-job-ad {
+            display: none;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .apply-button {
+            display: block;
+            width: 100%;
+            padding: 8px;
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            cursor: pointer;
+        }
+        .apply-button:hover {
+            background-color: #003d82;
+        }
+        h2 {
+            margin: 5px 0;
+            color: #0056b3;
+            font-size: 1.1em;
+        }
+        ul {
+            margin: 3px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 2px;
+        }
+        p {
+            margin: 3px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="job-teaser">
+        <div class="header">
+            <img src="https://imgur.com/9IS2ZQJ.png" alt="Bechtel Construction Logo" class="logo">
+            <div class="title-location">
+                <h1 class="job-title">Pipe Fitter</h1>
+                <div class="location">📍 Karratha, Port Hedland, Karratha & Pilbara WA</div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="slide active">
+                <h2>Job Overview</h2>
+                <ul>
+                    <li>🏗️ Join Bechtel's Pluto Train 2 Project</li>
+                    <li>💼 Full-time position</li>
+                    <li>💰 $52 – $78 per hour</li>
+                    <li>🏢 Work on LNG facility expansion</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Key Responsibilities</h2>
+                <ul>
+                    <li>📐 Read and interpret Isometric drawings</li>
+                    <li>🔧 Site measure and fit large and small bore pipe</li>
+                    <li>🏗️ Install pipe supports</li>
+                    <li>📋 Complete Flange Management and ITR's</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Requirements</h2>
+                <ul>
+                    <li>🛠️ 3+ years experience in construction & LNG industry</li>
+                    <li>🎓 Australian recognised fabrication or fitting trade certificate</li>
+                    <li>🔖 White Card</li>
+                    <li>💪 Ability to pass pre-employment medical and drug & alcohol screening</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h2>Benefits</h2>
+                <ul>
+                    <li>✈️ 3:1 FIFO roster from Perth (direct flights from Brisbane available)</li>
+                    <li>⏰ 68 hour work week</li>
+                    <li>💰 $47.30 per hour base rate + allowances</li>
+                    <li>🏖️ 5 weeks annual leave, 10 days personal leave</li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+        <div class="full-ad-toggle">
+            <label for="fullAdToggle">Show Full Job Ad</label>
+            <input type="checkbox" id="fullAdToggle" onclick="toggleFullAd()">
+        </div>
+        <div class="full-job-ad" id="fullJobAd">
+            <h2>Full Job Description</h2>
+            <p><strong>About the Project:</strong> Pluto Train 2 is the expansion of a second LNG train at the existing Pluto LNG onshore facility near Karratha in Western Australia run by Woodside Energy. It will process Scarborough gas and have an LNG capacity of ~5 million tonnes per annum.</p>
+            
+            <h3>Responsibilities:</h3>
+            <ul>
+                <li>Read and interpret Isometric drawings</li>
+                <li>Site measure and fit large bore and small bore pipe</li>
+                <li>Work to Bechtel piping procedures and tolerances</li>
+                <li>Installation of pipe supports</li>
+                <li>Complete Flange Management and ITR's</li>
+                <li>Work with supervision and engineering to complete IWP's</li>
+            </ul>
+
+            <h3>Qualifications and Skills:</h3>
+            <ul>
+                <li>Minimum of 3 years demonstrated experience in a similar position within the construction & LNG industry</li>
+                <li>Experience reading isometric drawings and use of P&IDs</li>
+                <li>Previous experience using clamshell and oxy cutting</li>
+                <li>Australian recognised fabrication or fitting trade certificate</li>
+                <li>White Card</li>
+                <li>Ability to pass pre-employment medical, drug & alcohol screening</li>
+                <li>Previous Bechtel experience is desirable</li>
+            </ul>
+
+            <h3>What's on Offer:</h3>
+            <ul>
+                <li>3:1 roster, FIFO from Perth. Direct flights available from Brisbane to Karratha</li>
+                <li>68 hour work week</li>
+                <li>Fly home morning of day 21, paid at ordinary hours - home the same day!</li>
+                <li>RDO is accrued - choose to have it paid during RNR or at the end of your contract</li>
+                <li>Full time, permanent employment (5 weeks of annual leave, 10 days of personal leave)</li>
+                <li>$47.30 per hour base rate</li>
+                <li>$1.88 per hour tradesperson allowance (bringing base to $49.18 + penalties)</li>
+                <li>$5.40 per hour site allowance</li>
+                <li>$175 per week project incentive payment (PIP)</li>
+                <li>Severance payment of 2 x base hourly rate per week</li>
+                <li>Weekly pay</li>
+            </ul>
+
+            <p><strong>Additional Information:</strong> This position involves exposure to changing environmental and construction conditions. The Pluto Train 2 Project is a Major Hazard Facility with specific site restrictions.</p>
+        </div>
+        <a href="https://www.seek.com.au/job/78425849?type=promoted&ref=search-standalone#sol=02f4f7597cad3533e60a3ba34e023b29fc61c300" class="apply-button" target="_blank">Apply Now</a>
+    </div>
+
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].classList.remove("active");  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex-1].classList.add("active");  
+            dots[slideIndex-1].classList.add("active");
+        }
+
+        function toggleFullAd() {
+            const fullJobAd = document.getElementById("fullJobAd");
+            const checkbox = document.getElementById("fullAdToggle");
+            fullJobAd.style.display = checkbox.checked ? "block" : "none";
+        }
+
+        // Auto-slide functionality
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000); // Change slide every 5 seconds
+    </script>
+</body>
+</html>
